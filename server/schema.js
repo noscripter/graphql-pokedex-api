@@ -5,7 +5,7 @@ import {
   GraphQLNonNull,
   GraphQLList,
   GraphQLString,
-} from 'graphql/lib/type';
+} from 'graphql';
 
 import { Pokemon } from './Pokemon';
 import { PokemonType, UserType } from './schemaTypes';
@@ -19,10 +19,12 @@ let schema = new GraphQLSchema({
     fields: {
       pokemon: {
         type: new GraphQLList(PokemonType),
+        description: "Pokemon Query Type",
         resolve: () => Pokemon
       },
       user: {
         type: UserType,
+        description: 'User',
         args: {
           name: {
             description: 'The name of the user',

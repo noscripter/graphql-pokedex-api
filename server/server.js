@@ -15,6 +15,6 @@ app.post('/graphql', (req, res) => {
 });
 
 let server = app.listen(
-  3000,
+  3001,
   () => console.log(`GraphQL running on port ${server.address().port}`)
 );
